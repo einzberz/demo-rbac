@@ -1,0 +1,17 @@
+{
+  "name": "demo-auth-rbac",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace apps/api\" \"npm run dev --workspace apps/web\"",
+    "build": "npm run build --workspace apps/api && npm run build --workspace apps/web",
+    "typecheck": "npm run typecheck --workspace apps/api && npm run typecheck --workspace apps/web",
+    "start": "concurrently \"npm run start --workspace apps/api\" \"npm run start --workspace apps/web\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
